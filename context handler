@@ -1,0 +1,150 @@
+response = Map();
+msg = answers.get("text");
+if(context_id.equals("donatefood"))
+{
+	ans = answers.get("options").get("text");
+	if(ans.containsIgnoreCase("Old Age Homes"))
+	{
+		response.put("action","context");
+		response.put("context_id","selectlocation");
+		questions = Collection();
+		question1 = {"name":"map","replies":{{"text":"Enable your location to find the nearest old age home"}},"input":{"type":"location","lat":"9.933053322929647","lng":"78.118874746269","label":"Pick a location","radius":"5 kms"}};
+		question2 = {"name":"home","replies":{"Please choose one home from below",{"text":"i. Shri Kamakhya Oldage Home ,24, Rathinam Maligai, 1st Street, near Old Pandian Theatre, Meenakshi Nagar, Vilangudi, Madurai, Tamil Nadu 625018.","image":"https://content.jdmagicbox.com/comp/madurai/p6/0452px452.x452.210811154709.p4p6/catalogue/shri-kamakhya-elders-care-vilangudi-madurai-home-for-destitute-women-vn0mcoj9t4.jpg?clr="},{"text":" ii.ANU HOSPICE CARE & OLD AGE HOME MADURAI,No.5-7-11/2, Kogalae Street, Seethalakshmi Nagar, Kalainagar, 2nd Main Rd, Madurai, Tamil Nadu 625017. ","image":"https://threebestrated.in/images/AngelDevagiOldageHome-Madurai-TN.jpeg"},{"text":"iii.Aravanaippu Old Age Home,Door no:5,12/25 Annai therasa street, Valluvar Colony 4th St, Thabaal Thanthi Nagar, Madurai, Tamil Nadu 625014.","image":"https://janasevafoundation.org/images/Elderly%20Care/Oldage%20Home%20(10).JPG"},{"text":"Select one Home"}},"input":{"type":"select","options":{"Shri Kamakhya Oldage Home","ANU HOSPICE CARE & OLD AGE HOME MADURAI","Aravanaippu Old Age Home"}}};
+		question4 = {"name":"guests","replies":{{"text":"How much food you can offer(headcount)?"}},"input":{"type":"slider","values":{"10","20","30","40","50"}}};
+		question5 = {"name":"confirm","replies":{{"text":"Can you confirm above mentioned headcount?"}},"input":{"type":"select","options":{"Yes,I confirm the headcount"}}};
+		question6 = {"name":"amount","replies":{{"text":"**NOTE** : Since you are donating food ,you don't have to pay amount"},{"text":"The amount you have to pay is(in Rs)"}},"input":{"type":"select","options":{"0"}}};
+		question7 = {"name":"option","replies":{{"text":"We have assigned a delivery partner for your order.Soon he will reach you."},{"text":"Details of the delivery partner will be sent via your mail(enter **okay**)"}}};
+		question8 = {"name":"email","replies":{{"text":"May I know your email address to send further details?"}}};
+		questions.insert(question1);
+		questions.insert(question2);
+		questions.insert(question4);
+		questions.insert(question5);
+		questions.insert(question6);
+		questions.insert(question7);
+		questions.insert(question8);
+		response.put("questions",questions);
+	}
+	else if(ans.containsIgnoreCase("Child Care"))
+	{
+		response.put("action","context");
+		response.put("context_id","selectlocation");
+		questions = Collection();
+		question1 = {"name":"map","replies":{{"text":"Enable your location to find the nearest orphanage"}},"input":{"type":"location","lat":"9.933053322929647","lng":"78.118874746269","label":"Pick a location","radius":"5 kms"}};
+		question2 = {"name":"home","replies":{"Please choose one orphanage from below",{"text":"i. Munawwarah Girls Orphanage Trust,Alagar Kovil Main Rd, M M S Colony, Surveyor Colony, Moondrumavadi, Madurai, Tamil Nadu 625007.","image":"https://content3.jdmagicbox.com/comp/madurai/h5/0452px452.x452.140919150045.h9h5/catalogue/munawwarah-girls-orphanage-k-pudhur-madurai-orphanages-0ldpx7nrfc.jpg?clr=4d1a33"},{"text":" ii.Sakthi-Vidiyal,Door No 6, A.A.Road Rathinapuram Rathinapuram MADURAI 625 011, Tamil Nadu 625011. ","image":"http://vidiyal-children.org/wp-content/uploads/2013/08/VCRM-History.jpg"},{"text":"iii.Sevalayam Ashram,W4FM+QG7, Alwarpuram, Madurai, Tamil Nadu 625020","image":"https://image3.jdomni.in/library/BD/6F/57/FC7E9576ADAD6872A8065D0EEC_1496244368687_cropped_450X450.jpeg"},{"text":"Select one orphanage"}},"input":{"type":"select","options":{"Munawwarah Girls Orphanage Trust","Sakthi-Vidiyal","Sevalayam Ashram"}}};
+		question4 = {"name":"guests","replies":{{"text":"How much food you can offer(per head)?"}},"input":{"type":"slider","values":{"10","20","30","40","50"}}};
+		question5 = {"name":"confirm","replies":{{"text":"Can you confirm above mentioned headcount?"}},"input":{"type":"select","options":{"Yes,I confirm the headcount"}}};
+		question6 = {"name":"amount","replies":{{"text":"**NOTE** : Since you are donating food ,you don't have to pay amount"},{"text":"The amount you have to pay is(in Rs)"}},"input":{"type":"select","options":{"0"}}};
+		question7 = {"name":"option","replies":{{"text":"We have assigned a delivery partner for your order.Soon he will reach you."},{"text":"Details of the delivery partner will be sent via your mail(enter **okay**)"}}};
+		question8 = {"name":"email","replies":{{"text":"May I know your email address to send further details?"}}};
+		questions.insert(question1);
+		questions.insert(question2);
+		questions.insert(question4);
+		questions.insert(question5);
+		questions.insert(question6);
+		questions.insert(question7);
+		questions.insert(question8);
+		response.put("questions",questions);
+	}
+	else if(ans.containsIgnoreCase("Physically Challenged Schools"))
+	{
+		response.put("action","context");
+		response.put("context_id","selectlocation");
+		questions = Collection();
+		question1 = {"name":"map","replies":{{"text":"Enable your location to find the nearest physically challenged schools"}},"input":{"type":"location","lat":"9.933053322929647","lng":"78.118874746269","label":"Pick a location","radius":"5 kms"}};
+		question2 = {"name":"home","replies":{"Please choose one school from below",{"text":"i.Ymca Special School,W4C3+27W, Ellis Nagar, Madurai, Tamil Nadu 625016","image":"https://live.staticflickr.com/6129/6024361779_64e18a9d77_b.jpg"},{"text":" ii.Bethshan Special School,Kovil Papakudi Rd, Thinam 4ani Nagar, Sikkandar Savadi, Koodal Nagar, Madurai, Tamil Nadu 625018. ","image":"https://lh5.googleusercontent.com/p/AF1QipODaOHoaF0W6Lf3s_a1Or_Lb8yLwNAJh5SypZc-=w1080-k-no"},{"text":"iii.C.S.I School & Home For The Differently Abled,373, GST Rd, Pasumalai, Madurai, Tamil Nadu 625004.","image":"https://www.mylaporetimes.com/wp-content/uploads/2019/04/IMG_20190419_182016.jpg"},{"text":"Select one school"}},"input":{"type":"select","options":{"Ymca Special School","Bethshan Special School","C.S.I School & Home For The Differently Abled"}}};
+		question4 = {"name":"guests","replies":{{"text":"How much food you can offer(per head)?"}},"input":{"type":"slider","values":{"10","20","30","40","50"}}};
+		question5 = {"name":"confirm","replies":{{"text":"Can you confirm above mentioned headcount?"}},"input":{"type":"select","options":{"Yes,I confirm the headcount"}}};
+		question6 = {"name":"amount","replies":{{"text":"**NOTE** : Since you are donating food ,you don't have to pay amount"},{"text":"The amount you have to pay is(in Rs)"}},"input":{"type":"select","options":{"0"}}};
+		question7 = {"name":"option","replies":{{"text":"We have assigned a delivery partner for your order.Soon he will reach you."},{"text":"Details of the delivery partner will be sent via your mail(enter **okay**)"}}};
+		question8 = {"name":"email","replies":{{"text":"May I know your email address to send further details?"}}};
+		questions.insert(question1);
+		questions.insert(question2);
+		questions.insert(question4);
+		questions.insert(question5);
+		questions.insert(question6);
+		questions.insert(question7);
+		questions.insert(question8);
+		response.put("questions",questions);
+	}
+}
+else if(context_id.equals("getdetails"))
+{
+	name = answers.get("name").get("text");
+	number = answers.get("contact").get("text");
+	params = {"majorDimension":"ROWS","values":{{name,number}}};
+	apiresponse = invokeurl
+	[
+		url :"https://sheets.googleapis.com/v4/spreadsheets/10Ps_n8kFoIpqOvZuh9buK_kURAue0Fa29ENaQpJDxiU/values/Sheet1!A1:E1:append?valueInputOption=USER_ENTERED"
+		type :POST
+		parameters:params.toString()
+		headers:{"Content-Type":"application/json"}
+		connection:"foodsaviour"
+	];
+	response.put("replies",{{"text":"Okay Great😀!!!To proceed further choose one from the suggestions...."}});
+	response.put("suggestions",{"Donate Food","Order Food"});
+}
+else if(context_id.equals("orderfood"))
+{
+	ans = answers.get("category").get("text");
+	if(ans.containsIgnoreCase("Veg"))
+	{
+		response.put("action","context");
+		response.put("context_id","selecthotel");
+		questions = Collection();
+		question1 = {"name":"maps","replies":{{"text":"Enable your location to find the nearest veg hotels"}},"input":{"type":"location","lat":"9.933053322929647","lng":"78.118874746269","label":"Pick a location","radius":"5 kms"}};
+		question2 = {"name":"address","replies":{"Please choose one restaurant from below",{"text":"i. Hotel Sree Sabarees,1, Kamarajar Salai, Pankajam Colony, Madurai, Tamil Nadu 625009.","image":"https://pr0.nicelocal.in/NWZKAdOZ-JrTdBLkqmgnLA/640x360,q85/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2RnURE1uijIaWf1Yf293qk7zfQMmAL4NxAkOX2G-HMjSDKbGG3vjveQnHs7eQvWfBQ"},{"text":" ii.Gowri Krishna,Arul Nagar, p18, Bypass Rd, State Bank Supervisors Colony, Madurai, Tamil Nadu 625016. ","image":"https://lh3.googleusercontent.com/p/AF1QipNKnO8lFCPZAPxjxnMlA_GFx9FNfwisrILZ-D9C=s1600-w400"},{"text":"iii.Sri Saravana Bhavan Pure Veg,E Veli St, Panthadi Area, Madurai Main, Panthadi, Tamil Nadu 625001.","image":"https://pr0.nicelocal.in/U2Zk3T7fMFvFDmltyhdZGA/587x440,q85/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2bMlaR_nVM4dSIbQM3Ct18bNJz2TLiivUW6FklWlTj1S7GOQSC_m0b4OVdGRq5O43g"},{"text":"Select one restaurant"}},"input":{"type":"select","options":{"Hotel Sree Sabarees","Gowri Krishna","Sri Saravana Bhavan "}}};
+		question3 = {"name":"guests","replies":{{"text":"How many guests can we expect?"}},"input":{"type":"slider","values":{"1","2","3","4","5","6","7","8","9","10"}}};
+		question4 = {"name":"confirm","replies":{{"text":"Can you confirm above mentioned headcount?"}},"input":{"type":"select","options":{"Yes,I confirm the headcount"}}};
+		question5 = {"name":"amount","replies":{{"text":"Choose the price amount of the food (per head)"}},"input":{"type":"select","options":{"50","100","150"}}};
+		question6 = {"name":"option","replies":{{"text":"We have assigned a delivery partner for your order.Soon he will reach you."},{"text":"Details of the delivery partner will be sent via your mail(enter **okay**)"}}};
+		question7 = {"name":"email","replies":{{"text":"May I know your email address to send further details?"}}};
+		questions.insert(question1);
+		questions.insert(question2);
+		questions.insert(question3);
+		questions.insert(question4);
+		questions.insert(question5);
+		questions.insert(question6);
+		questions.insert(question7);
+		response.put("questions",questions);
+	}
+	if(ans.containsIgnoreCase("Non Veg"))
+	{
+		response.put("action","context");
+		response.put("context_id","selecthotel");
+		questions = Collection();
+		question1 = {"name":"maps","replies":{{"text":"Enable your location to find the nearest non-veg hotels"}},"input":{"type":"location","lat":"9.933053322929647","lng":"78.118874746269","label":"Pick a location","radius":"5 kms"}};
+		question2 = {"name":"address","replies":{"Please choose one restaurant from below",{"text":"i. Zaitoon Restaurant,80 Feet Rd, New LIG Colony, Anna Nagar, Sathamangalam, Tamil Nadu 625020.","image":"https://lh3.googleusercontent.com/p/AF1QipPKnHr3nZBqnkGMiQHEcr3oEVqdMMHLd_Fc_sR2=s1600-w1080"},{"text":" ii.Amma Mess,136, Alagar Kovil Main Rd, Tallakulam, Tamil Nadu 625002 ","image":"https://b.zmtcdn.com/data/pictures/8/18696868/6805e682bb064a8544dceaa0a60b94fe.jpg"},{"text":"iii.Krishnan Mess,159/1B, Kamarajar Salai, Teppakulam, Madurai, Tamil Nadu 625009.","image":"https://10619-2.s.cdn12.com/rests/small/w312/h280/107_500600108.jpg"},{"text":"Select one restaurant"}},"input":{"type":"select","options":{"Zaitoon Restaurant","Amma Mess","Krishnan Mess"}}};
+		question3 = {"name":"guests","replies":{{"text":"How many parcels do you need?"}},"input":{"type":"slider","values":{"1","2","3","4","5","6","7","8","9","10"}}};
+		question4 = {"name":"confirm","replies":{{"text":"Can you confirm above mentioned headcount?"}},"input":{"type":"select","options":{"Yes,I confirm the headcount"}}};
+		question5 = {"name":"amount","replies":{{"text":"Choose the price amount of the food (per head)"}},"input":{"type":"select","options":{"50","100","150"}}};
+		question6 = {"name":"option","replies":{{"text":"We have assigned a delivery partner for your order.Soon he will reach you."},{"text":"Details of the delivery partner will be sent via your mail(enter **okay**)"}}};
+		question7 = {"name":"email","replies":{{"text":"May I know your email address to send further details?"}}};
+		questions.insert(question1);
+		questions.insert(question2);
+		questions.insert(question3);
+		questions.insert(question4);
+		questions.insert(question5);
+		questions.insert(question6);
+		questions.insert(question7);
+		response.put("questions",questions);
+	}
+}
+else
+{
+	response.put("action","end");
+	email = answers.get("email").get("text");
+	par = answers.get("guests").get("text").toNumber();
+	amo = answers.get("amount").get("text").toNumber();
+	total = par * amo;
+	random = randomNumber(100001,999999);
+	sendmail
+	[
+		from :zoho.adminuserid
+		to :email
+		subject :"Food Saviour-Delivery partner Details"
+		message :"Greetings from Food Saviour🙏 . <br/><ul>YOUR ORDER SUMMARY<li>Order Number : " + random + "</li><li>No.of orders : " + par + "</li><li>Bill Amount :Rs." + total + "</li><li>Order Status : Confirmed✅</li></ul><br/><ul>YOUR DELIVERY PARTNER DETAILS<li>Name : Mr.Ravi</li><li>Contact Number : 9087654321</li></ul><br/>Thank You for visiting our website😀"
+	]
+	response.put("replies",{{"text":"Please click the below link to verify your email address","type":"links","links":{{"text":"click here","url":"https://forms.zohopublic.in/divya9/form/demo/formperma/qEia0iESD9qU-t2lPIsr0To7IQ21esyN2Rk5RfZNA3w","target":"_self"}}},{"text":"A mail has been sent to the above mentioned email address with necessary details of your delivery partner."},{"text":"Thank you for visiting😀."}});
+	return response;
+}
+return response;
