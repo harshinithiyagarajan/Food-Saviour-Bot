@@ -1,0 +1,6 @@
+response = Map();
+response.put("action","reply");
+response.put("replies",{"Hello there! 👋 Welcome to **Food Saviour** Bot.","This site provides where merchants can post and sell the excess food at discounted prices or they can donate the food for the needy.I(Food Saviour Bot) will also guide you to order food at near by restaurants. ","Are you ready to donate or order food?"});
+response.put("suggestions",{"Yes,I'm ready","No,I'm just browsing"});
+//response.put("input",{"type":"select","options":{"Yes ,I'm ready","No,I am just browsing"}});
+return response;
