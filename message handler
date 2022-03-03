@@ -1,0 +1,41 @@
+response = Map();
+msg = message.get("text");
+if(msg.containsIgnoreCase("No,I'm just browsing"))
+{
+	response.put("action","end");
+	response.put("replies",{"Okay then let me know if you want anything😀"});
+	return response;
+}
+else if(operation.equals("chat"))
+{
+	response.put("action","context");
+	response.put("context_id","getdetails");
+	question = Collection();
+	question1 = {"name":"name","replies":{{"text":"Awesome💥!!Let's get started right away.Before that I need some of your details"},{"text":"Tell me your good name"}}};
+	question2 = {"name":"contact","replies":{{"text":"That's a pretty nice name✨ "},{"text":"Tell me your contact number"}}};
+	question.insert(question1);
+	question.insert(question2);
+	response.put("questions",question);
+}
+else
+{
+	if(msg.containsIgnoreCase("Donate Food"))
+	{
+		response.put("action","context");
+		response.put("context_id","donatefood");
+		questions = Collection();
+		question1 = {"name":"options","replies":{{"text":"Where would you like to donate?"}},"suggestions":{"Old Age Homes","Child Care","Physically Challenged Schools"}};
+		questions.insert(question1);
+		response.put("questions",questions);
+	}
+	else if(msg.containsIgnoreCase("Order Food"))
+	{
+		response.put("action","context");
+		response.put("context_id","orderfood");
+		questions = Collection();
+		question1 = {"name":"category","replies":{{"text":"What kind of food do you prefer?"},{"text":"**NOTE** : You cannot choose from the menu since you are ordering from the remaining food."}},"suggestions":{"Veg","Non Veg"}};
+		questions.insert(question1);
+		response.put("questions",questions);
+	}
+}
+return response;
